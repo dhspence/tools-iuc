@@ -1,0 +1,44 @@
+<?xml version="1.0"?>
+<tool_dependency>
+    <package name="stringtie" version="1.2.2">
+      <install version="1.0">
+          <actions_group>
+              <actions architecture="x86_64" os="linux">
+                    <action type="download_by_url" sha256sum="6400bb08d1161e55e20dbe1bf84bab72de7c59c69dac3b7f638d2ef014fd46db">http://ccb.jhu.edu/software/stringtie/dl/stringtie-1.2.2.Linux_x86_64.tar.gz</action>
+                    <action type="move_file">
+                      <source>stringtie</source>
+                        <destination>$INSTALL_DIR/bin</destination>
+                    </action>
+                </actions>
+                <actions architecture="x86_64" os="darwin">
+                    <action type="download_by_url" sha256sum="b48709e8e7907f2fb880e6d95847c11adc37962376ad476897db48bac32c0f7e">http://ccb.jhu.edu/software/stringtie/dl/stringtie-1.2.2.OSX_x86_64.tar.gz</action>
+                    <action type="move_file">
+                      <source>stringtie</source>
+                        <destination>$INSTALL_DIR/bin</destination>
+                    </action>
+                </actions>
+                <actions>
+                    <action type="download_by_url" sha256sum="e0ce82c447a752f95c4ed26cffd22fb40a9d3664ff879f4861754dd908e257bd">http://ccb.jhu.edu/software/stringtie/dl/stringtie-1.2.2.tar.gz</action>
+                    <action type="shell_command">make release</action>
+                    <action type="move_file">
+                      <source>stringtie</source>
+                        <destination>$INSTALL_DIR/bin</destination>
+                    </action>
+                </actions>
+                <action type="set_environment">
+                  <environment_variable action="prepend_to" name="PATH">$INSTALL_DIR/bin</environment_variable>
+                  <environment_variable action="set_to" name="STRINGTIE_ROOT_PATH">$INSTALL_DIR</environment_variable>
+                </action>
+            </actions_group>
+        </install>
+        <readme>
+  StringTie is a fast and highly efficient assembler of RNA-Seq alignments into potential transcripts.
+  It uses a novel network flow algorithm as well as an optional de novo assembly step to assemble and
+  quantitate full-length transcripts representing multiple splice variants for each gene locus.
+  Its input can include not only the alignments of raw reads used by other transcript assemblers,
+  but also alignments longer sequences that have been assembled from those reads.
+  To identify differentially expressed genes between experiments, StringTie's
+  output can be processed either by the Cuffdiff or Ballgown programs.
+        </readme>
+    </package>
+</tool_dependency>
