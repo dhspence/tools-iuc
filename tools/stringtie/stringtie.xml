@@ -1,7 +1,7 @@
-<tool id="stringtie" name="StringTie" version="1.1.0">
+<tool id="stringtie" name="StringTie" version="1.2.2">
     <description>transcript assembly and quantification</description>
     <requirements>
-        <requirement type="package" version="1.1.0">stringtie</requirement>
+        <requirement type="package" version="1.2.2">stringtie</requirement>
     </requirements>
     <command><![CDATA[
         stringtie "$input_bam"
